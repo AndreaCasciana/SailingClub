@@ -1,0 +1,13 @@
+jdbc:mysql://localhost:3306/sailingClub?allowMultiQueries=true
+&createDatabaseIfNotExist=true
+root
+root
+
+
+
+
+
+jdbc:mysql://mysql-skingsle.alwaysdata.net/skingsle_sailingclub?allowMultiQueries=true
+&createDatabaseIfNotExist=true
+skingsle_sailing
+SailingClub

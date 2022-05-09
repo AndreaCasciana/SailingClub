@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane fx:id="root" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiController.homePageController">
+   <children>
+      <BorderPane prefHeight="358.0" prefWidth="441.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #0048BA; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane prefHeight="53.0" prefWidth="800.0">
+                     <left>
+                        <JFXButton onAction="#services" prefHeight="53.0" prefWidth="110.0" style="-fx-background-color: blue;" text="Services" textFill="WHITE" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                     </left>
+                     <right>
+                        <JFXButton fx:id="login" onAction="#gotoLogin" prefHeight="53.0" prefWidth="110.0" style="-fx-background-color: blue;" text="Sign In" textFill="WHITE" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="44.0" fitWidth="43.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../utility/images/login.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </right>
+                     <center>
+                        <ImageView fitHeight="47.0" fitWidth="164.0" onMouseClicked="#gotoHomePage" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                           <image>
+                              <Image url="@../utility/images/logo.png" />
+                           </image>
+                        </ImageView>
+                     </center>
+                  </BorderPane>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <AnchorPane prefHeight="446.0" prefWidth="800.0" style="-fx-background-size: contain;">
+                           <children>
+                              <ImageView fitHeight="453.0" fitWidth="800.0" pickOnBounds="true" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <image>
+                                    <Image url="@../utility/images/slide1.jpg" />
+                                 </image>
+                              </ImageView>
+                              <AnchorPane fx:id="servicesView" layoutY="-1.0" prefHeight="447.0" prefWidth="800.0" style="-fx-background-color: rgba(0, 187, 255, 0.5);">
+                                 <children>
+                                    <Label layoutX="298.0" layoutY="14.0" text="Welcome Aboard!" textFill="#100880">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="71.0" layoutY="64.0" prefHeight="57.0" prefWidth="657.0" text="Welcome The Sailing Club, a client-server software system that organizes and runs bareboat charter sailing trips. " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="22.0" layoutY="410.0" prefHeight="23.0" prefWidth="759.0" style="-fx-background-color: rgba(0, 187, 255, 0.6);" text="created by: Vanessa Kingsley &amp; Andrea Casciana" textAlignment="CENTER" textFill="#085430" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <graphic>
+                                          <Hyperlink onAction="#openUnipr" text="(Università degli Studi di PARMA)" textFill="#050d06" />
+                                       </graphic>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="13.0" layoutY="134.0" prefHeight="85.0" prefWidth="773.0" text="This is a  software for prospective members, to provide an idea of what the system offers, and for current members to stay up to date on Club activities and trip plans. Whether you are already a sailor, have never been on a boat before, or are someplace in between, The Sailing Club is a great place to make new friends, have a fun time doing it, and hone your skills as well!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="13.0" layoutY="213.0" prefHeight="85.0" prefWidth="773.0" text="Membership to the Club is open to anyone, whether a seasoned sailor or beginner which requires an annual membership fee. Please note, however, that you must be a Club member to participate in any of the races. You can refer to our Membership page for more information on becoming a member." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="13.0" layoutY="352.0" prefHeight="44.0" prefWidth="773.0" text="For prospective members, we hope this page has provided you sufficient information to make you want to try a trip with us this season. " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="5.0" layoutY="282.0" prefHeight="78.0" prefWidth="790.0" text="Signing up for races (see current trips schedule for relevant dates) a fee is required to reserve a place at signup. Members are also allow to storage their boats in club with an annual storage fee determined by the size of each boats." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="pane2" prefHeight="338.0" prefWidth="590.0" visible="false">
+                           <children>
+                              <ImageView fitHeight="446.0" fitWidth="800.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <image>
+                                    <Image url="@../utility/images/slide2.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="pane3" prefHeight="338.0" prefWidth="600.0" visible="false">
+                           <children>
+                              <ImageView fitHeight="446.0" fitWidth="800.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <image>
+                                    <Image url="@../utility/images/slide3.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                        <BorderPane fx:id="centerView" prefHeight="338.0" prefWidth="680.0" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="54.0">
+                     <left>
+                        <JFXButton buttonType="RAISED" onAction="#back" opacity="0.6" prefHeight="242.0" prefWidth="50.0" style="-fx-background-color: black; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);" text="&lt;" textFill="WHITE" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Arial Bold" size="26.0" />
+                           </font>
+                        </JFXButton>
+                     </left>
+                     <right>
+                        <JFXButton buttonType="RAISED" onAction="#next" opacity="0.6" prefHeight="242.0" prefWidth="50.0" style="-fx-background-color: black; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);" text="&gt;" textFill="WHITE" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Arial Bold" size="26.0" />
+                           </font>
+                        </JFXButton>
+                     </right>
+                     <bottom>
+                        <TextFlow lineSpacing="20.0" prefHeight="89.0" prefWidth="610.0" style="-fx-background-color: rgba(0,0,0,0.3);" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                           <children>
+                              <SplitPane dividerPositions="0.5" prefHeight="91.0" prefWidth="573.0" style="-fx-background-color: transparent;">
+                                 <items>
+                                    <Text fx:id="event" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="UPCOMING RACES " textAlignment="CENTER" wrappingWidth="258.73828125">
+                                       <font>
+                                          <Font name="System Bold Italic" size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <SplitPane dividerPositions="0.1919191919191919" orientation="VERTICAL" prefHeight="89.0" prefWidth="362.0" style="-fx-background-color: transparent;">
+                                      <items>
+                                          <Text fx:id="eventTitle" fill="#fffafa" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="394.73388671875">
+                                             <font>
+                                                <Font name="Arial Bold" size="31.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="eventText" fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="405.0">
+                                             <font>
+                                                <Font name="Arial" size="25.0" />
+                                             </font>
+                                          </Text>
+                                      </items>
+                                    </SplitPane>
+                                 </items>
+                              </SplitPane>
+                           </children>
+                        </TextFlow>
+                     </bottom>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

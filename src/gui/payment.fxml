@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: rgba(40, 199, 178, 0.1);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiController.paymentController">
+   <children>
+      <Label layoutX="160.0" layoutY="14.0" prefHeight="31.0" prefWidth="190.0" style="-fx-background-color: rgba(40, 197, 199, 0.54);" text="PAYMENT OPTIONS">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="101.0" text="Payment Method:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="paymentMethod" layoutX="183.0" layoutY="99.0" onAction="#setPaymentMethod" promptText="select payment method" />
+      <AnchorPane fx:id="cardOption" layoutX="27.0" layoutY="158.0" prefHeight="324.0" prefWidth="418.0" visible="false">
+         <children>
+            <JFXButton layoutX="164.0" layoutY="271.0" onAction="#addCard" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: yellow;" text="Add credit card">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Text fx:id="amountToPay" layoutX="9.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="410.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <ScrollPane layoutX="70.0" layoutY="55.0" prefHeight="208.0" prefWidth="358.0" stylesheets="@application.css">
+               <content>
+                  <VBox fx:id="cardsView" maxHeight="1.7976931348623157E308" prefHeight="199.0" prefWidth="317.0" />
+               </content>
+               <styleClass>
+                  <String fx:value="viewport" />
+                  <String fx:value="scroll-pane" />
+               </styleClass>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="addCardView" layoutX="10.0" layoutY="152.0" prefHeight="337.0" prefWidth="480.0" visible="false">
+         <children>
+            <AnchorPane layoutX="35.0" layoutY="41.0" prefHeight="221.0" prefWidth="410.0" style="-fx-background-color: rgba(0, 0, 255, 0.1);">
+               <children>
+                  <TextField fx:id="cardName" layoutX="37.0" layoutY="35.0" onKeyPressed="#requestCardNumberFocus" prefHeight="28.0" prefWidth="255.0" promptText="as it apears on the card">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="37.0" layoutY="14.0" text="CARDHOLDER'S NAME">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="cardTypeIMG" fitHeight="80.0" fitWidth="80.0" layoutX="304.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextField fx:id="cardNumber" layoutX="37.0" layoutY="99.0" onKeyPressed="#requestExpMonthFocus" prefHeight="28.0" prefWidth="201.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="37.0" layoutY="78.0" text="CARD NUMBER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="expMonth" layoutX="37.0" layoutY="162.0" onKeyPressed="#requestExpYearFocus" prefHeight="28.0" prefWidth="41.0" promptText="MM">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="37.0" layoutY="141.0" text="EXPIRATION DATE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="expYear" layoutX="87.0" layoutY="163.0" onKeyPressed="#requestCCVFocus" prefHeight="28.0" prefWidth="52.0" promptText="YY">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="75.0" layoutY="157.0" text="/">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="187.0" layoutY="141.0" text="CCV">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="ccv" layoutX="185.0" layoutY="162.0" prefHeight="28.0" prefWidth="52.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Text fx:id="dateErrorMsg" fill="RED" layoutX="8.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="167.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="cardNumberErrorMsg" fill="RED" layoutX="242.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="invalid card number" wrappingWidth="147.5">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="completePaymentBtn" buttonType="RAISED" layoutX="179.0" layoutY="275.0" onAction="#completePayment" prefHeight="31.0" prefWidth="266.0" style="-fx-background-color: lightgreen;" text="Complete payment ">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="167.0" layoutY="14.0" text="Add Credit Card Details">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="45.0" layoutY="258.0" onAction="#cancelAddCard" prefHeight="65.0" prefWidth="63.0" styleClass="backCancel" stylesheets="@application.css" text="Button" textFill="#ffffff00">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="transferOption" layoutX="30.0" layoutY="137.0" prefHeight="360.0" prefWidth="441.0" style="-fx-background-color: rgba(152, 251, 202, 0.2);">
+         <children>
+            <AnchorPane layoutY="-2.0" prefHeight="138.0" prefWidth="441.0" style="-fx-background-color: rgba(39, 165, 255, 0.20);">
+               <children>
+                  <Label layoutX="7.0" layoutY="4.0" text="Payer">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="25.0" text="Account holder">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="payerAccountHolder" layoutX="134.0" layoutY="21.0" onKeyPressed="#requestPayerBankFocus" prefHeight="25.0" prefWidth="243.0" />
+                  <Label layoutX="73.0" layoutY="62.0" text="Bank">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="payerBank" layoutX="134.0" layoutY="58.0" onKeyPressed="#requestPayerIBANFocus" prefHeight="25.0" prefWidth="243.0" />
+                  <Label layoutX="73.0" layoutY="97.0" text="IBAN">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="payerIBAN" layoutX="134.0" layoutY="93.0" prefHeight="25.0" prefWidth="243.0" />
+                  <Text fx:id="payerIbanError" fill="RED" layoutX="384.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERROR!">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <Label layoutX="9.0" layoutY="136.0" text="Benifactor Details">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="260.0" text="Reciept details">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="230.0" text="IBAN">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="iban" editable="false" layoutX="152.0" layoutY="226.0" prefHeight="25.0" prefWidth="243.0" />
+            <Label layoutX="91.0" layoutY="197.0" text="Bank">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="bank" editable="false" layoutX="152.0" layoutY="193.0" prefHeight="25.0" prefWidth="243.0" />
+            <Label layoutX="28.0" layoutY="293.0" text="Amount">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="amount" editable="false" layoutX="89.0" layoutY="289.0" prefHeight="25.0" prefWidth="75.0" />
+            <Label layoutX="62.0" layoutY="166.0" text="Benifactor">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="benefactor" editable="false" layoutX="152.0" layoutY="161.0" prefHeight="25.0" prefWidth="243.0" />
+            <Label layoutX="188.0" layoutY="293.0" text="Cause">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cause" editable="false" layoutX="226.0" layoutY="289.0" prefHeight="25.0" prefWidth="201.0" />
+            <JFXButton fx:id="saveTransferRecieptBtn" buttonType="RAISED" layoutX="86.0" layoutY="322.0" onAction="#saveTransferReciept" prefHeight="31.0" prefWidth="280.0" style="-fx-background-color: rgba(51, 245, 148, 1);" text="PAY">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

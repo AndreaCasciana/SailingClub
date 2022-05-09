@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="layer1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="367.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiController.SigninController">
+   <children>
+      <AnchorPane fx:id="entryDetails">
+         <children>
+            <AnchorPane fx:id="memberLoginForm" layoutX="319.0" layoutY="68.0" prefHeight="259.0" prefWidth="276.0">
+               <children>
+                  <TextField fx:id="memberID" layoutX="66.0" layoutY="57.0" onKeyPressed="#requestMemberPasswordFocus" prefHeight="25.0" prefWidth="190.0" promptText="codice fiscale" />
+                  <PasswordField fx:id="memberPassword" layoutX="66.0" layoutY="99.0" onKeyPressed="#fireSigninBtn" prefHeight="25.0" prefWidth="190.0" promptText="password" />
+                  <Label layoutX="19.0" layoutY="61.0" text="ID:" />
+                  <Label layoutY="103.0" text="Password:" />
+                  <Button fx:id="signinBtn" layoutX="123.0" layoutY="153.0" mnemonicParsing="false" onAction="#signin" prefHeight="21.0" prefWidth="76.0" text="Sign in">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="53.0" layoutY="4.0" text="Enter Membership details">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="loginErrorMsg" layoutX="57.0" layoutY="206.0" prefHeight="25.0" prefWidth="172.0" textAlignment="CENTER" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="newMemberLoginForm" layoutY="3.0" prefHeight="361.0" prefWidth="319.0">
+               <children>
+                  <Label layoutY="6.0" prefHeight="17.0" prefWidth="284.0" text="Create a Membership Account">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="newMemberID" layoutX="85.0" layoutY="79.0" onKeyPressed="#requestNewMemberNameFocus" prefHeight="25.0" prefWidth="190.0" promptText="codice fiscale" />
+                  <PasswordField fx:id="newMemberPassword" layoutX="86.0" layoutY="244.0" onKeyPressed="#requestNewMemberPasswordRepeatFocus" prefHeight="25.0" prefWidth="190.0" promptText="password" />
+                  <Label layoutX="37.0" layoutY="83.0" text="ID:" />
+                  <Label layoutX="18.0" layoutY="248.0" text="Password:" />
+                  <Label layoutX="52.0" layoutY="44.0" text="Enter the following details">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="newMemberName" layoutX="86.0" layoutY="125.0" onKeyPressed="#requestNewMemberSurnameFocus" prefHeight="25.0" prefWidth="190.0" promptText="name" />
+                  <TextField fx:id="newMemberSurname" layoutX="86.0" layoutY="160.0" onKeyPressed="#requestNewMemberAddressFocus" prefHeight="25.0" prefWidth="190.0" promptText="surname" />
+                  <TextField fx:id="newMemberAddress" layoutX="86.0" layoutY="202.0" onKeyPressed="#requestNewMemberPasswordFocus" prefHeight="25.0" prefWidth="190.0" promptText="address" />
+                  <Button fx:id="signupBtn" layoutX="122.0" layoutY="326.0" mnemonicParsing="false" onAction="#signup" prefHeight="21.0" prefWidth="76.0" text="Sign up">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="21.0" layoutY="206.0" text="Address:" />
+                  <Label layoutX="19.0" layoutY="164.0" text="Surname:" />
+                  <Label layoutX="27.0" layoutY="129.0" text="Name:" />
+                  <Label fx:id="newMemberErrorMsg" layoutX="86.0" layoutY="104.0" prefHeight="17.0" prefWidth="190.0" textFill="RED" />
+                  <Label fx:id="newMemberpasswordErrorMsg" layoutX="87.0" layoutY="303.0" prefHeight="17.0" prefWidth="190.0" textFill="RED" />
+                  <PasswordField fx:id="newMemberPasswordRepeat" layoutX="86.0" layoutY="278.0" onKeyPressed="#fireSignupBtn" prefHeight="25.0" prefWidth="190.0" promptText="password repeat" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="layer2" layoutX="288.0" prefHeight="367.0" prefWidth="308.0" style="-fx-background-color: #1BAAB3;">
+               <children>
+                  <Hyperlink layoutX="107.0" layoutY="323.0" onAction="#gotoStaffArea" prefHeight="14.0" prefWidth="133.0" text="Staff Area" textAlignment="CENTER" textFill="#400606">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="16.0" />
+                     </font>
+                  </Hyperlink>
+                  <AnchorPane fx:id="newMemberSliderInfo" layoutY="44.0" prefHeight="259.0" prefWidth="290.0">
+                     <children>
+                        <Label layoutX="80.0" layoutY="22.0" prefHeight="50.0" prefWidth="172.0" text="Welcome!" textFill="WHITE">
+                           <font>
+                              <Font name="Microsoft Tai Le Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="42.0" layoutY="95.0" text="Obtain membership to get started!" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="33.0" fitWidth="90.0" layoutX="1.0" layoutY="89.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../utility/images/arrow.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="30.0" layoutY="199.0" prefHeight="27.0" prefWidth="172.0" text="Already a member?" textFill="#e4ff6d">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="208.0" layoutY="198.0" mnemonicParsing="false" onAction="#gotoSignin" prefHeight="21.0" prefWidth="76.0" text="Sign in">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="membershipFeeLabel" alignment="CENTER" layoutX="14.0" layoutY="116.0" prefHeight="27.0" prefWidth="276.0" text="Membership Fee:" textAlignment="CENTER" textFill="#2f00ff">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="memberSliderInfo" layoutX="30.0" layoutY="88.0" prefHeight="219.0" prefWidth="245.0">
+                     <children>
+                        <Label layoutX="46.0" prefHeight="50.0" prefWidth="197.0" text="Welcome Back!" textFill="WHITE">
+                           <font>
+                              <Font name="Microsoft Tai Le Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label layoutY="93.0" text="Sign in to unclok more feautures" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="33.0" fitWidth="90.0" layoutX="222.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../utility/images/arrow.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutY="178.0" prefHeight="27.0" prefWidth="172.0" text="Not yet a member?" textFill="#e4ff6d">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="172.0" layoutY="177.0" mnemonicParsing="false" onAction="#gotoSignup" prefHeight="21.0" prefWidth="76.0" text="Sign up">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <ImageView fitHeight="57.0" fitWidth="181.0" layoutX="107.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../utility/images/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="addMembershipFee" layoutX="108.0" layoutY="119.0" prefHeight="144.0" prefWidth="381.0" style="-fx-background-color: #F0F8FF;" visible="false">
+         <children>
+            <Label layoutX="61.0" layoutY="60.0" text="Membership Fee:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="84.0" layoutY="99.0" onAction="#payMembershipFeeNow" style="-fx-background-color: green;" text="Pay Now">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="membershipFee" layoutX="199.0" layoutY="60.0" prefHeight="25.0" prefWidth="76.0" text="\$">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="107.0" layoutY="19.0" text="Account created successfully!">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="194.0" layoutY="99.0" onAction="#payMembershipFeeLater" style="-fx-background-color: #B33B00;" text="Pay Later">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

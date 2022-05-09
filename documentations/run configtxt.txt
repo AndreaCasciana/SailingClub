@@ -1,0 +1,22 @@
+______________________________________________________________________
+RUN CONFIGURATION PROJECT
+
+--module-path "C:\Program Files\Java\javafx-sdk-18.0.1\lib" 
+--add-modules javafx.controls,javafx.fxml --add-opens=java.base/java.lang.reflect=com.jfoenix
+--add-exports javafx.controls/com.sun.javafx.scene.control.behavior=com.jfoenix
+--add-exports javafx.controls/com.sun.javafx.scene.control=com.jfoenix
+--add-exports javafx.base/com.sun.javafx.binding=com.jfoenix
+--add-exports javafx.graphics/com.sun.javafx.stage=com.jfoenix
+--add-exports javafx.base/com.sun.javafx.event=com.jfoenix
+--add-exports=javafx.controls/com.sun.javafx.scene.control.behavior=ALL-UNNAMED
+--add-exports=javafx.base/com.sun.javafx.binding=ALL-UNNAMED
+--add-exports=javafx.graphics/com.sun.javafx.stage=ALL-UNNAMED
+--add-exports=javafx.base/com.sun.javafx.event=ALL-UNNAMED
+
+
+______________________________________________________________________
+RUN CONFIGURATION TEST
+
+--module-path "C:\Program Files\Java\javafx-sdk-18.0.1\lib" 
+--add-exports org.junit.platform.commons/org.junit.platform.commons.util=ALL-UNNAMED
+--add-exports org.junit.platform.commons/org.junit.platform.commons.logging=ALL-UNNAMED

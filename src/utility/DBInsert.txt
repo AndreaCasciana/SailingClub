@@ -1,0 +1,66 @@
+INSERT INTO member (name, surname, address, id, password, removed) VALUES
+('Maria','Rossi','Via Michele, 9','MRARSS90H56G337S','mari',false),
+('Giorgio','Marconi','Via Verdi Russo, 1','GRGMCN76P26F462P','gio3',false),
+('Vanessa','Kingsley','Via Giuseppe Rossi, 13','KNGVSS98R66Z335F','ehi',false),
+('Luca','Albano','Via Vicolo Stretto','LCULBN71A31H501K','luba99',false),
+('Franco','Lupetto','Via Roma, 98','FRNLTT53M23D612F','frany77',true);
+
+INSERT INTO boat (id, name, owner, lengthInFeet, removed) VALUES
+(4454,'Santa Marià','KNGVSS98R66Z335F','16',false),
+(5221,'Pequod','MRARSS90H56G337S','15',false),
+(7841,'Moon','GRGMCN76P26F462P','65',false),
+(8568,'Santa Marià','GRGMCN76P26F462P','55',false),
+(8951,'Santa Marià','FRNLTT53M23D612F','45.5',true),
+(9873,'HighLander','KNGVSS98R66Z335F','40',false),
+(1258,'USS Maine','MRARSS90H56G337S','30',false),
+(6666,'Tropical','KNGVSS98R66Z335F','20',false),
+(2145,'Sea Sailor','GRGMCN76P26F462P','20.5',false);
+
+INSERT INTO staff (id, name, surname, username, password, isAdmin, removed) VALUES
+(1000,'Pietro','Luca','pippo','pip3',true,true),
+(1001,'Andrea','Casciana','andrew','andy97',false,false),
+(1002,'Luciana','Ferrara','lucy','lulu',true,false),
+(1003,'Mario','Albano','mario','mario99',false,false);
+
+INSERT INTO race (id, name, date, fee, cancelled) VALUES
+(101,'Warsash SC','2022-03-06 12:45:00','10.0',false),
+(102,'Burghfield SC','2022-06-23 15:00:00','15.0',true),
+(100,'RS Aero Open','2022-05-13 09:15:00','25.0',false),
+(103,'the Volvo Ocean Race','2022-04-30 12:30:00','48.0',false),
+(104,'Paralympic','2022-07-23 08:15:00','20.0',false),
+(105,'Regatta','2022-10-03 15:00:00','19.0',false);
+
+INSERT INTO enrolment (memberID, raceID, boatID, date, cancelled) VALUES
+('MRARSS90H56G337S',101,1258,'2022-02-15',false),
+('KNGVSS98R66Z335F',101,9873,'2022-04-01',false),
+('KNGVSS98R66Z335F',104,9873,'2022-05-01',false),
+('MRARSS90H56G337S',104,9873,'2022-04-05',false),
+('MRARSS90H56G337S',100,5221,'2022-02-27',true);
+
+INSERT INTO credit_card (id, type, cardName, cardNumber, exp_month, exp_year, removed) VALUES
+(1002,'VISA','Vanessa Kingsley',4165701987571789,10,2026,false),
+(1001,'MasterCard','Maria Gina Rossi',5558781894328715,04,2027,false),
+(1000,'Amex','Vanessa Kingsley',375050202843118,09,2020,false);
+
+INSERT INTO transfer_reciept_details (id, IBAN, bank, accountName) VALUES
+(1001,'IT90Y0300203280592972546759','UNICREDIT BANCA DI ROMA SPA','Luca Albano'),
+(1002,'IT37A3718699302K28B92K9X608','CREDIT AGRICOLE ITALIA SPA','Giorgio Giovani Marconi');
+
+INSERT INTO payment (id, memberID, method, methodID_CC, methodID_TR, cause, boatID, raceID, amount, date) VALUES
+(108,'KNGVSS98R66Z335F','card',1000,null,'storage fee',6666,null,'91.50','2019-06-23'),
+(100,'LCULBN71A31H501K','transfer',null,1001,'membership fee',null,null,'198.00','2021-02-15'),
+(101,'KNGVSS98R66Z335F','card',1001,null,'membership fee',null,null,'198.00','2022-02-01'),
+(102,'MRARSS90H56G337S','card',1001,null,'membership fee',null,null,'198.00','2021-10-11'),
+(103,'KNGVSS98R66Z335F','card',1001,null,'storage fee',4454,null,'116.00','2021-11-23'),
+(104,'MRARSS90H56G337S','card',1001,null,'storage fee',5221,null,'101.50','2019-03-20'),
+(105,'GRGMCN76P26F462P','transfer',null,1002,'storage fee',7841,null,'198.00','2022-02-15'),
+(106,'GRGMCN76P26F462P','transfer',null,1002,'storage fee',7841,null,'148.65','2021-12-25'),
+(107,'KNGVSS98R66Z335F','card',1001,null,'race fee',null,104,'116.00','2022-01-23');
+
+INSERT INTO club_details (AnnualMembershipFee, AnnualBoatStoragePricePerFoot, benefactor, bank, IBAN) VALUES
+('198.00','7.25','Sailing Club','Unicredit SPA','IT98I141804922896495Z9MYAA0');
+
+INSERT INTO notification (id, memberID, head, body, date, opened) VALUES
+(1000,'KNGVSS98R66Z335F','Boat Storage Fee Expired','Annual storage fee for boat << HighLander >> has expired. Please renew','2021-12-15',true),
+(1001,'MRARSS90H56G337S','Boat Storage Fee Expired','Annual storage fee for boat << Pequod >> has expired. Please renew','2021-02-15',false),
+(1002,'KNGVSS98R66Z335F','Boat Storage Fee Expired','Annual storage fee for boat << Tropical >> has expired. Please renew','2022-02-15',false)

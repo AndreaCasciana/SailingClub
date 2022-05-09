@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiController.MemberController">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../utility/images/slide1.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="homeView" layoutX="37.0" layoutY="73.0" prefHeight="410.0" prefWidth="597.0" visible="false">
+         <children>
+            <Label fx:id="notificationLabel" alignment="CENTER" layoutX="29.0" prefHeight="35.0" prefWidth="568.0" text="Label" textFill="#00ff16">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <SplitPane fx:id="memberUpcomingRaces" dividerPositions="0.5" layoutX="5.0" layoutY="93.0" prefHeight="91.0" prefWidth="573.0" style="-fx-background-color: transparent;">
+               <items>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="YOUR UPCOMING RACES " textAlignment="CENTER" wrappingWidth="258.73828125">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Text>
+                  <SplitPane dividerPositions="0.1919191919191919" orientation="VERTICAL" prefHeight="89.0" prefWidth="362.0" style="-fx-background-color: transparent;">
+                     <items>
+                        <Text fx:id="eventTitleUpcoming" fill="#fffafa" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="394.73388671875">
+                           <font>
+                              <Font name="Arial Bold" size="31.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="eventTextUpcoming" fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="405.0">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Text>
+                     </items>
+                  </SplitPane>
+               </items>
+            </SplitPane>
+            <SplitPane fx:id="otherRaces" dividerPositions="0.5" layoutX="14.0" layoutY="237.0" prefHeight="91.0" prefWidth="573.0" style="-fx-background-color: transparent;">
+               <items>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="JOIN RACES " textAlignment="CENTER" wrappingWidth="258.73828125">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Text>
+                  <SplitPane dividerPositions="0.1919191919191919" orientation="VERTICAL" prefHeight="89.0" prefWidth="362.0" style="-fx-background-color: transparent;">
+                     <items>
+                        <Text fx:id="eventTitleOther" fill="#fffafa" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="394.73388671875">
+                           <font>
+                              <Font name="Arial Bold" size="31.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="eventTextOther" fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="405.0">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Text>
+                     </items>
+                  </SplitPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+      <Pane prefHeight="54.0" prefWidth="800.0" style="-fx-background-color: #0048BA; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);">
+         <children>
+            <BorderPane layoutX="1.0" layoutY="1.0" prefHeight="53.0" prefWidth="800.0">
+               <left>
+                  <JFXButton onAction="#services" prefHeight="53.0" prefWidth="110.0" style="-fx-background-color: blue;" text="Services" textFill="WHITE" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </left>
+               <center>
+                  <ImageView fitHeight="47.0" fitWidth="164.0" onMouseClicked="#gotoHomePage" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../utility/images/logo.png" />
+                     </image>
+                  </ImageView>
+               </center>
+               <right>
+                  <JFXButton fx:id="user" onAction="#showMenu" prefHeight="53.0" prefWidth="143.0" style="-fx-background-color: blue;" text="user" textFill="WHITE" BorderPane.alignment="CENTER">
+                     <graphic>
+                        <ImageView fx:id="profilePictureIcon" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../utility/profile/default.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </right>
+            </BorderPane>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="profile" layoutX="34.0" layoutY="97.0" prefHeight="363.0" prefWidth="606.0" style="-fx-background-color: #F0F8FF;" visible="false">
+         <children>
+            <AnchorPane layoutX="25.0" layoutY="53.0" prefHeight="204.0" prefWidth="454.0" style="-fx-background-color: #FFFBE6;">
+               <children>
+                  <ImageView fx:id="profilePicture" fitHeight="150.0" fitWidth="200.0" layoutX="31.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../utility/profile/default.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="name" layoutX="227.0" layoutY="69.0" prefHeight="33.0" prefWidth="220.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="surname" layoutX="227.0" layoutY="102.0" prefHeight="33.0" prefWidth="220.0" text="Surname">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="address" layoutX="227.0" layoutY="135.0" prefHeight="33.0" prefWidth="220.0" text="Address">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="id" layoutX="227.0" layoutY="36.0" prefHeight="33.0" prefWidth="220.0" text="ID">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <JFXButton buttonType="RAISED" layoutX="91.0" layoutY="266.0" onAction="#deleteAccount" prefHeight="33.0" prefWidth="133.0" style="-fx-background-color: gray;" text="Delete Account">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="464.0" layoutY="299.0" onAction="#editProfileDetails" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #C46210;" text="Edit Details">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></JFXButton>
+            <Label layoutX="212.0" layoutY="14.0" text="Membership">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="membershipStatus" layoutX="319.0" layoutY="9.0" onAction="#payMembershipFee" prefHeight="37.0" prefWidth="123.0" text="Button">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
+            <ImageView fx:id="gotoNotificationFromProfile" fitHeight="47.0" fitWidth="54.0" layoutX="25.0" layoutY="302.0" onMouseClicked="#gotoNotificationFromProfileClicked" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../utility/images/backCancel.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="editProfile" layoutX="181.0" layoutY="61.0" prefHeight="430.0" prefWidth="438.0" style="-fx-background-color: #FFE6B3;" visible="false">
+         <children>
+            <TextField fx:id="changeName" layoutX="132.0" layoutY="70.0" prefHeight="25.0" prefWidth="190.0" promptText="name" />
+            <Label layoutX="32.0" layoutY="74.0" text="Set New Name:" />
+            <TextField fx:id="changeSurname" layoutX="135.0" layoutY="116.0" prefHeight="25.0" prefWidth="183.0" promptText="surname" />
+            <Label layoutX="20.0" layoutY="120.0" text="Set New Surname:" />
+            <PasswordField fx:id="changePassword1" layoutX="133.0" layoutY="273.0" prefHeight="25.0" prefWidth="196.0" promptText="new password" />
+            <Label layoutX="42.0" layoutY="277.0" text="New Password:" />
+            <TextField fx:id="changeAddress" layoutX="135.0" layoutY="162.0" prefHeight="25.0" prefWidth="190.0" promptText="address" />
+            <Label layoutX="24.0" layoutY="166.0" text="Set New Address:" />
+            <PasswordField fx:id="changePassword2" layoutX="132.0" layoutY="304.0" prefHeight="25.0" prefWidth="196.0" promptText="repeat new password" />
+            <JFXButton fx:id="setName" buttonType="RAISED" layoutX="339.0" layoutY="70.0" onAction="#setName" style="-fx-background-color: #6699FF;" text="set name">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="setSurname" buttonType="RAISED" layoutX="334.0" layoutY="116.0" onAction="#setSurname" style="-fx-background-color: #80EAFF;" text="set surname">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="setAddress" buttonType="RAISED" layoutX="337.0" layoutY="162.0" onAction="#setAddress" style="-fx-background-color: #95FF80;" text="set address">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="setPassword" buttonType="RAISED" layoutX="336.0" layoutY="304.0" onAction="#setPassword" style="-fx-background-color: #FFFF66;" text="set password">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="290.0" layoutY="374.0" onAction="#setImage" prefHeight="33.0" prefWidth="99.0" style="-fx-background-color: #FF6666;" text="save image">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="141.0" layoutY="23.0" prefHeight="26.0" prefWidth="156.0" text="Edit Profile Details">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="oldPassword" layoutX="135.0" layoutY="239.0" prefHeight="25.0" prefWidth="196.0" promptText="previous password" />
+            <Label layoutX="45.0" layoutY="243.0" text="Old Password:" />
+            <Label layoutX="84.0" layoutY="212.0" text="Set New Password:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="image" alignment="CENTER_RIGHT" layoutX="24.0" layoutY="381.0" onMouseClicked="#chooseImage" prefHeight="19.0" prefWidth="255.0" text="choose picture from file" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Narrow" size="13.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="61.0" fitWidth="75.0" layoutX="12.0" layoutY="6.0" onMouseClicked="#gobackToProfile" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../utility/images/backCancel.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="boats" layoutX="14.0" layoutY="83.0" prefHeight="410.0" prefWidth="617.0" style="-fx-background-color: #E6E6FF;" visible="false">
+         <children>
+            <AnchorPane fx:id="addBoatView" layoutX="-2.0" layoutY="299.0" prefHeight="111.0" prefWidth="619.0" style="-fx-background-color: rgba(106, 64, 255, 0.2);" visible="false">
+               <children>
+                  <Label layoutX="51.0" layoutY="18.0" text="Name:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="310.0" layoutY="18.0" text="Length:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="newBoatName" layoutX="88.0" layoutY="14.0" prefHeight="25.0" prefWidth="210.0" promptText="name of boat" />
+                  <TextField fx:id="newBoatLength" layoutX="353.0" layoutY="14.0" prefHeight="25.0" prefWidth="133.0" promptText="lenght(in feet) of boat" />
+                  <JFXButton fx:id="addNewBoatBtn" layoutX="454.0" layoutY="55.0" onAction="#addNewBoat" prefHeight="17.0" prefWidth="123.0" style="-fx-background-color: #9999FF;" text="Add New Boat">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <Text fx:id="newBoatStorageFee" layoutX="51.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="393.5">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="addBoatBtn" layoutX="266.0" layoutY="299.0" onAction="#addBoat" style="-fx-background-color: #9999FF;" text="Add Boat">
+            
+                              
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="261.0" layoutY="14.0" prefHeight="31.0" prefWidth="120.0" text="Your Boats">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <TableView fx:id="boatsTableView" layoutX="31.0" layoutY="71.0" prefHeight="204.0" prefWidth="552.0" style="-fx-background-color: rgba(0, 0, 0, 0);">
+              <columns>
+                <TableColumn fx:id="nameCol" editable="false" maxWidth="300.0" minWidth="155.5" prefWidth="195.5" text="Name" />
+                <TableColumn fx:id="lengthCol" editable="false" maxWidth="394.5" minWidth="200.0" prefWidth="354.5" text="Length (feet)" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <ImageView fx:id="gotoNotificationFromBoats" fitHeight="47.0" fitWidth="54.0" layoutX="26.0" layoutY="13.0" onMouseClicked="#gotoNotificationFromBoatsClicked" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../utility/images/backCancel.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="races" layoutX="50.0" layoutY="106.0" prefHeight="363.0" prefWidth="575.0" style="-fx-background-color: rgba(39, 217, 245, 0.8);" visible="false">
+         <children>
+            <JFXRadioButton fx:id="rbAllRaces" layoutX="42.0" layoutY="30.0" text="All Races">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="rbEnrolledRaces" layoutX="169.0" layoutY="30.0" text="Enrolled Upcoming Races">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="rbPastRaces" layoutX="395.0" layoutY="30.0" text="Enrolled Past Races">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXRadioButton>
+            <TableView fx:id="allRacesTableView" layoutX="12.0" layoutY="67.0" prefHeight="287.0" prefWidth="552.0" style="-fx-background-color: rgba(0, 0, 0, 0);" visible="false">
+               <columns>
+                  <TableColumn fx:id="raceColAll" editable="false" maxWidth="300.0" minWidth="200.0" prefWidth="200.0" text="Race" />
+                  <TableColumn fx:id="dateColAll" editable="false" maxWidth="300.0" minWidth="200.0" prefWidth="200.0" text="Date" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="enrolledRacesTableView" layoutX="22.0" layoutY="77.0" prefHeight="275.0" prefWidth="532.0" style="-fx-background-color: rgba(0, 0, 0, 0);" visible="false">
+               <columns>
+                  <TableColumn fx:id="raceColEnrolled" editable="false" maxWidth="300.0" minWidth="200.0" prefWidth="200.0" text="Race" />
+                  <TableColumn fx:id="dateColEnrolled" editable="false" maxWidth="300.0" minWidth="200.0" prefWidth="200.0" text="Date" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="pastRacesTableView" layoutX="81.0" layoutY="91.0" prefHeight="240.0" prefWidth="414.0" style="-fx-background-color: rgba(0, 0, 0, 0);" visible="false">
+               <columns>
+                  <TableColumn fx:id="raceColPast" editable="false" maxWidth="300.0" minWidth="200.0" prefWidth="257.5" text="Race" />
+                  <TableColumn fx:id="dateColPast" editable="false" maxWidth="300.0" minWidth="154.5" prefWidth="154.5" text="Date" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="notificationsView" layoutX="72.0" layoutY="62.0" prefHeight="430.0" prefWidth="552.0" style="-fx-background-color: rgba(172, 201, 104, 0.5);" visible="false">
+         <children>
+            <ScrollPane layoutX="34.0" layoutY="59.0" prefHeight="375.0" prefWidth="402.0" stylesheets="@application.css">
+               <content>
+                  <VBox fx:id="notifications" alignment="CENTER" maxHeight="1.7976931348623157E308" prefHeight="372.0" prefWidth="393.0" spacing="5.0">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </content>
+               <styleClass>
+                  <String fx:value="viewport" />
+                  <String fx:value="scroll-pane" />
+               </styleClass>
+            </ScrollPane>
+            <VBox fx:id="filterNotifications" layoutX="462.0" layoutY="150.0" prefHeight="54.0" prefWidth="90.0" spacing="10.0">
+               <children>
+                  <CheckBox fx:id="showNotificationsUnreadCB" mnemonicParsing="false" onAction="#showNotificationsUnread" prefHeight="24.0" prefWidth="88.0" text="unread">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="showNotificationsReadCB" mnemonicParsing="false" onAction="#showNotificationsRead" prefHeight="27.0" prefWidth="89.0" text="read">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </VBox>
+            <Label layoutX="211.0" layoutY="14.0" text="Notifications" textFill="#2d3c06">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton id="filterBtn" fx:id="filterNotificationsBtn" buttonType="RAISED" layoutX="446.0" layoutY="99.0" onAction="#toggleFilterNotifications" prefHeight="51.0" prefWidth="122.0" stylesheets="@application.css" text="Button" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="notificationDetailsView" layoutX="90.0" layoutY="106.0" prefHeight="347.0" prefWidth="532.0" style="-fx-background-color: rgba(178,190,181,0.9);" visible="false">
+         <children>
+            <Label fx:id="notificationHeading" alignment="CENTER" layoutX="29.0" layoutY="66.0" prefHeight="54.0" prefWidth="477.0" text="Label" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="notificationBody" layoutX="15.0" layoutY="120.0" prefHeight="174.0" prefWidth="505.0" text="Label" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="56.0" layoutY="305.0" onAction="#gotoBoatsFromNotification" style="-fx-background-color: #414a4c;" text="Go to Boats" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></JFXButton>
+            <JFXButton layoutX="364.0" layoutY="305.0" onAction="#gotoProfileFromNotification" style="-fx-background-color: #444c38;" text="Go to Profile" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></JFXButton>
+            <ImageView fitHeight="47.0" fitWidth="54.0" layoutX="14.0" onMouseClicked="#gobackToNotifications" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../utility/images/backCancel.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="servicesView" layoutY="52.0" prefHeight="449.0" prefWidth="800.0" style="-fx-background-color: rgba(0, 187, 255, 0.5);" visible="false">
+         <children>
+            <Label layoutX="298.0" layoutY="14.0" text="Welcome Aboard!" textFill="#100880">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="71.0" layoutY="64.0" prefHeight="57.0" prefWidth="657.0" text="Welcome The Sailing Club, a client-server software system that organizes and runs bareboat charter sailing trips. " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="22.0" layoutY="410.0" prefHeight="23.0" prefWidth="759.0" style="-fx-background-color: rgba(0, 187, 255, 0.6);" text="created by: Vanessa Kingsley &amp; Andrea Casciana" textAlignment="CENTER" textFill="#085430" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <Hyperlink onAction="#openUnipr" text="(Università degli Studi di PARMA)" textFill="#050d06" />
+               </graphic>
+            </Label>
+            <Label alignment="CENTER" layoutX="13.0" layoutY="134.0" prefHeight="85.0" prefWidth="773.0" text="This is a  software for prospective members, to provide an idea of what the system offers, and for current members to stay up to date on Club activities and trip plans. Whether you are already a sailor, have never been on a boat before, or are someplace in between, The Sailing Club is a great place to make new friends, have a fun time doing it, and hone your skills as well!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="13.0" layoutY="245.0" prefHeight="35.0" prefWidth="773.0" text="As a member you get to enjoy some variety of privileges offered by the club" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="13.0" layoutY="352.0" prefHeight="44.0" prefWidth="773.0" text="For prospective members, we hope this page has provided you sufficient information to make you want to try a trip with us this season. " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="13.0" layoutY="304.0" prefHeight="35.0" prefWidth="773.0" text="Signing up for races (see current trips schedule for relevant dates) a fee is required to reserve a place at signup." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="menuView" blendMode="SRC_ATOP" layoutX="646.0" layoutY="54.0" prefHeight="298.0" prefWidth="118.0" style="-fx-background-color: #CCEEFF;" visible="false">
+         <children>
+            <VBox prefHeight="298.0" prefWidth="154.0">
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" onAction="#gotoHome" prefHeight="50.0" prefWidth="173.0" text="Home">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../utility/images/home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" onAction="#gotoProfile" prefHeight="47.0" prefWidth="165.0" text="Profile">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../utility/images/user.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="60.0" onAction="#gotoBoats" prefHeight="50.0" prefWidth="164.0" text="Boats">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../utility/images/boat.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="110.0" onAction="#gotoRaces" prefHeight="44.0" prefWidth="162.0" text="Races">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../utility/images/race.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="160.0" onAction="#gotoNotifications" prefHeight="61.0" prefWidth="153.0" text="Notifications">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../utility/images/notification.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="210.0" onAction="#logout" prefHeight="48.0" prefWidth="143.0" text="Logout">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../utility/images/logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

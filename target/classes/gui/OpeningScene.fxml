@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" styleClass="opening" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiController.OpeningSceneController">
+   <top>
+      <ImageView fitHeight="431.0" fitWidth="304.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_CENTER">
+         <image>
+            <Image url="@../utility/images/logo.png" />
+         </image>
+      </ImageView>
+   </top>
+   <opaqueInsets>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </opaqueInsets>
+   <center>
+      <BorderPane prefHeight="224.0" prefWidth="509.0" BorderPane.alignment="CENTER">
+         <top>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="230.0" prefWidth="491.0" text="WELCOME" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold Italic" size="81.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.3554502369668246">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color blue="0.501960813999176" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.007662835249042145">
+                           <color>
+                              <Color blue="0.501960813999176" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.007662835249042145">
+                           <color>
+                              <Color blue="0.5" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.7647058963775635" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>

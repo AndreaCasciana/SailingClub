@@ -1,0 +1,192 @@
+.opening{
+	-fx-background-image:url('../utility/images/opening.gif'); 
+	-fx-background-size: 100% 100%;
+}
+
+#refreshBtn{
+	-fx-background-image:url('../utility/images/refresh.png'); 
+	-fx-background-size: 100% 100%;
+}
+
+#filterBtn{
+	-fx-background-image:url('../utility/images/filter.png'); 
+	-fx-background-size: 100% 100%;
+}
+
+#searchBtn{
+	-fx-background-image:url('../utility/images/search.png'); 
+	-fx-background-size: 100% 100%;
+}
+
+/*The ViewPort of the ScrollPane */
+.scroll-pane .viewport {
+    -fx-background-color: transparent; /*or whatever you want*/
+  }
+
+.scroll-pane {
+    -fx-background-color:transparent;
+}
+
+.backCancel{
+	-fx-background-image: url('../utility/images/backCancel.png');
+	-fx-background-size: 100% 100%;
+}
+
+#enrolledRace {
+    -fx-background-color:rgba(255, 228, 0, 1);
+    -fx-background-radius:0;
+    -fx-border-color:black;
+    -fx-border-width: 0 3 3 0;
+    -fx-font-weight: bold;
+}
+#cancelledRace, #expired {
+    -fx-background-color:rgba(255, 30, 0, 1);
+}
+#finishedRace, #enrolledRaceDetails {
+    -fx-background-color:rgba(0, 0, 0, 0.2);
+}
+#enrollRace {
+    -fx-background-color:lime;
+}
+
+#enrolledRace, #cancelledRace, #finishedRace, #enrollRace, #selectBoatText, #enrolledRaceDetails, #enrolledBoatText, #raceClicked , #memberBoatsTitle{
+    -fx-background-radius:0;
+    -fx-border-color:black;
+    -fx-border-width: 0 3 3 0;
+    -fx-font-weight: bold;
+}
+
+#dialogVboxSelectBoat, #dialogRaceClicked {
+	-fx-border-color: red;
+    -fx-border-insets: 5;
+    -fx-border-width: 3;
+    -fx-border-style: dashed;
+}
+
+#VboxSelectBoat, #lbRaces, #VboxRaceClicked{
+	-fx-border-color: green;
+    -fx-border-insets: 5;
+    -fx-border-width: 3;
+    -fx-border-style: solid;
+}
+
+#lbRacesAll, #lbRacesCancelled, #lbRacesPast, #lbMembersAll, #lbmembershipPending, 
+#lbStorageValid, #lbStorageValidPending, #notificationsUnread, #notificationsRead {
+    -fx-border-insets: 5;
+    -fx-border-width: 3;
+    -fx-border-style: solid;
+}
+#lbRacesAll, #lbMembersAll, #lbStorageValid {
+	-fx-border-color: green;
+}
+#lbRacesCancelled, #lbmembershipPending, #lbStorageValidPending {
+	-fx-border-color: red;
+}
+#lbRacesPast{
+	-fx-border-color: gray;
+}
+
+#memberDetails  {
+    -fx-background-color: rgba(46, 129, 163, 1);
+    -fx-text-fill: WHITE;
+    -fx-font-weight: BOLD;
+}
+
+#selectBoatButtonValid, #selectBoatButtonExpired{
+    -fx-text-fill: WHITE;
+    -fx-font-weight: BOLD;
+}
+#selectBoatButtonValid{
+	-fx-background-color: green;
+}
+#selectBoatButtonExpired{
+	-fx-background-color: red;
+}
+
+#selectBoatButtonNotValid, #selectBoatButtonValid  {
+    -fx-text-fill: WHITE;
+    -fx-font-weight: BOLD;
+}
+
+#selectBoatButtonValid  {
+    -fx-background-color: green
+}
+
+#selectBoatButtonNotValid  {
+    -fx-background-color: red
+}
+
+#viewEnrolledRaceDialog {
+	-fx-background-color: rgba(49, 218, 241, 0.3);
+}
+
+#changeBoatOfRace {
+	-fx-background-color: rgba(227, 241, 49, 0.5);
+}
+
+#unenrollFromEnrolledRace {
+	-fx-background-color: rgba(241, 135, 49, 1);
+}
+
+#errMessageRaceDetails, #lbExpStorageMsg {
+	-fx-text-fill: red;
+}
+
+#edit, #add {
+	-fx-background-image: url("../utility/images/blueBackground.png");
+	-fx-background-repeat: stretch;
+	-fx-background-size: 900 506;
+	-fx-background-position: center center;
+	-fx-background-color: transparent;
+	-fx-opacity: 0.90;
+}
+
+#editOutput, #valid {
+	-fx-font-weight: bold;
+	-fx-text-fill: green;
+}
+
+#labelEdit, #labelAdd {
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+}
+
+
+#btnAdd,
+#btnEdit {
+	-fx-font-weight: bold;
+	-fx-background-color: #ff6600;
+	-fx-text-fill: white;
+}
+
+#btnAdd:hover,
+#btnEdit:hover {
+	-fx-font-weight: bold;
+	-fx-background-color: #ff944d;
+	-fx-text-fill: white;
+}
+
+#btnAdd:pressed,
+#btnEdit:pressed {
+	-fx-font-weight: bold;
+	-fx-background-color: #cc5200;
+	-fx-text-fill: lightgray;
+}
+
+#lbHead {
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+	-fx-font-size: 24px;
+}
+
+#lbBody {
+	-fx-text-fill: #f0f0f0;
+}
+
+#notificationsUnread {
+	-fx-border-color: green;
+}
+
+#notificationsRead {
+	-fx-border-color: grey;
+}

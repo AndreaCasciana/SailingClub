@@ -1,0 +1,128 @@
+create table if not exists member
+( 
+	name VARCHAR(50) not null,
+	surname VARCHAR(50) not null,
+	address VARCHAR(50),
+	id VARCHAR(16) not null,
+	password VARCHAR(50) not null,
+	removed BOOLEAN not null,
+	
+	PRIMARY KEY (id)
+);
+
+create table if not exists boat
+(
+	id INT AUTO_INCREMENT,
+	name VARCHAR(50) not null,
+	owner VARCHAR(16) not null,
+	lengthInFeet DOUBLE not null,
+	removed BOOLEAN not null,
+	
+	PRIMARY KEY (id),
+	FOREIGN KEY (owner) references member(id) ON UPDATE CASCADE ON DELETE CASCADE
+)AUTO_INCREMENT = 1000;
+
+create table if not exists staff
+( 
+	id INT AUTO_INCREMENT,
+	name VARCHAR(50) not null,
+	surname VARCHAR(50) not null,
+	username VARCHAR(50) not null,
+	password VARCHAR(50) not null,
+	isAdmin BOOLEAN not null,
+	removed BOOLEAN not null,
+	
+	PRIMARY KEY (id),
+	UNIQUE(username)
+)AUTO_INCREMENT = 1000;
+
+create table if not exists race
+( 
+	id INT AUTO_INCREMENT,
+	name VARCHAR(50) not null,
+	date DATETIME not null,
+	fee DOUBLE not null,
+	cancelled BOOLEAN not null,
+	
+	PRIMARY KEY (id)
+)AUTO_INCREMENT = 100;
+
+create table if not exists enrolment
+( 
+	memberID VARCHAR(16) not null,
+	raceID INT not null, 
+	boatID INT not null, 
+	date DATE not null,
+	cancelled BOOLEAN not null,
+	
+	UNIQUE(memberID,raceID),
+	FOREIGN KEY (memberID) references member(id) ON UPDATE CASCADE,
+	FOREIGN KEY (raceID) references race(id) ON UPDATE CASCADE,
+	FOREIGN KEY (boatID) references boat(id) ON UPDATE CASCADE
+);
+
+create table if not exists credit_card
+(
+	id INT AUTO_INCREMENT,
+	type VARCHAR(50), -- visa, mastercard, ecc
+	cardName VARCHAR(50) not null,
+	cardNumber BIGINT not null,
+	exp_month INT not null,
+	exp_year INT not null,
+	removed BOOLEAN not null,
+    
+    PRIMARY KEY (id)
+)AUTO_INCREMENT = 1000;
+
+create table if not exists transfer_reciept_details
+(
+	id INT AUTO_INCREMENT,
+	IBAN VARCHAR(50) not null,
+	bank VARCHAR(50) not null,
+	accountName VARCHAR(50) not null,
+    
+    PRIMARY KEY (id)
+)AUTO_INCREMENT = 1000;
+
+create table if not exists payment
+(
+	id INT AUTO_INCREMENT,
+	memberID VARCHAR(16) not null,
+	method VARCHAR(50) not null, -- card or transfer
+	methodID_CC INT,
+	methodID_TR INT,
+	cause VARCHAR(50) not null, -- membership fee, storage fee
+	boatID INT,
+	raceID INT,
+	amount DOUBLE not null,
+	date DATE not null,
+	
+    PRIMARY KEY (id),
+	FOREIGN KEY (memberID) references member(id) ON UPDATE CASCADE,
+	FOREIGN KEY (methodID_CC) references credit_card(id) ON UPDATE CASCADE,
+	FOREIGN KEY (methodID_TR) references transfer_reciept_details(id) ON UPDATE CASCADE,
+	FOREIGN KEY (raceID) references race(id) ON UPDATE CASCADE,
+	FOREIGN KEY (boatID) references boat(id) ON UPDATE CASCADE
+)AUTO_INCREMENT = 100;
+
+create table if not exists club_details -- dati del software che puo' essere cambiato
+( 
+	AnnualMembershipFee DOUBLE not null,
+	AnnualBoatStoragePricePerFoot DOUBLE not null,
+	benefactor VARCHAR(50) not null,
+	bank VARCHAR(50) not null,
+	IBAN VARCHAR(34) not null
+);
+
+create table if not exists notification
+(
+	id INT AUTO_INCREMENT,
+	memberID VARCHAR(16) not null,
+	head VARCHAR(100) not null,
+	body VARCHAR(300),
+	date DATE not null,
+	opened BOOLEAN not null,
+	
+    PRIMARY KEY (id),
+	FOREIGN KEY (memberID) references member(id) ON UPDATE CASCADE
+)AUTO_INCREMENT = 1000;
